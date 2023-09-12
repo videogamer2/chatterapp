@@ -1,4 +1,28 @@
 body {
     background: rgb(7,0,126);
-    background: linear-gradient(90deg, rgba(7,0,126,1) 0%, rgba(0,0,115,1) 30%, rgba(255,255,255,1) 100%);
+    background: linear-gradient(90deg, rgba(7,0,126,1) 0%, rgba(0,0,115,1) 30%, rgb(54, 90, 255) 100%);
+}
+#title-text {
+    font-family: monospace;
+    font-size: 30px;
+}
+.myPanels {
+    text-align: center;
+    font-family: monospace;
+    font-size: xx-large;
+    background-color: rgb(94, 97, 255);
+    margin-left: 40%;
+    margin-right: 40%;
+    margin-top: 200px;
+    padding-bottom: 20px;
+    border: 5px black double;
+}
+.centerpiece {
+    text-align: center;
+    color: rgb(157, 157, 255);
+}
+.myButtons {
+    border-style: double;
+    border-color: black;
+    border-radius: 5px;
 }
