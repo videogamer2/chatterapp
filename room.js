@@ -18,3 +18,37 @@ function logout(){
 function onload(){
     document.getElementById("username-greet").innerHTML = "Bem Vindo(a), " + username + "!";
 }
+
+function addRoom(){
+    var roomname = document.getElementById("roomName").value;
+    firebase.database().ref("/").child(roomname).update({
+      purpose: "Adding Room"
+    });
+    localStorage.setItem("roomName", roomname);
+    window.location = "kwitterPage.html";
+  }
+
+  function getData() {firebase.database().ref("/").on('value',
+function(snapshot) {document.getElementById("output").innerHTML =
+"";snapshot.forEach(function(childSnapshot) {childKey =
+childSnapshot.key;
+roomNames = childKey;
+//Início do código
+       console.log("faz o grrr " + roomNames);
+       var roomNameThingys = "<div class = 'roomName' id = " + roomNames + " onclick = 'mewhentheuhh(this.id)'>" + roomNames + "</div> <hr>";
+       document.getElementById("output").innerHTML += roomNameThingys;
+//Fim do código
+});});}
+getData();
+
+function mewhentheuhh(name){
+  console.log(name);
+  localStorage.setItem("roomName", name);
+  window.location = "Page.html";
+}
+
+function logout(){
+  window.location = "index.html";
+  localStorage.removeItem("username");
+  localStorage.removeItem("roomName");
+}
