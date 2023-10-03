@@ -12,6 +12,8 @@ firebase.initializeApp(firebaseConfig);
 
 var username = localStorage.getItem("username");
 function logout(){
+    localStorage.removeItem("username");
+    localStorage.removeItem("roomName");
     window.location = "index.html";
     username = " ";
 }
@@ -44,11 +46,5 @@ getData();
 function mewhentheuhh(name){
   console.log(name);
   localStorage.setItem("roomName", name);
-  window.location = "Page.html";
-}
-
-function logout(){
-  window.location = "index.html";
-  localStorage.removeItem("username");
-  localStorage.removeItem("roomName");
+  window.location = "page.html";
 }
