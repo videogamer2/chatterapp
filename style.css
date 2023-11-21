@@ -1,6 +1,7 @@
 body {
     background: rgb(7,0,126);
     background: linear-gradient(90deg, rgba(7,0,126,1) 0%, rgba(0,0,115,1) 30%, rgb(54, 90, 255) 100%);
+    color: white;
 }
 #title-text {
     font-family: monospace;

@@ -18,16 +18,18 @@ function logout(){
     username = " ";
 }
 function onload(){
-    document.getElementById("username-greet").innerHTML = "Bem Vindo(a), " + username + "!";
+  var username = localStorage.getItem("username");
+  document.getElementById("username-greet").innerHTML = "Bem Vindo(a), " + username + "!";
 }
 
 function addRoom(){
-    var roomname = document.getElementById("roomName").value;
+    var roomname = document.getElementById("addRoomInput").value;
     firebase.database().ref("/").child(roomname).update({
       purpose: "Adding Room"
     });
+    console.log(roomname);
     localStorage.setItem("roomName", roomname);
-    window.location = "kwitterPage.html";
+    window.location = "page.html";
   }
 
   function getData() {firebase.database().ref("/").on('value',
@@ -37,14 +39,14 @@ childSnapshot.key;
 roomNames = childKey;
 //Início do código
        console.log("faz o grrr " + roomNames);
-       var roomNameThingys = "<div class = 'roomName' id = " + roomNames + " onclick = 'mewhentheuhh(this.id)'>" + roomNames + "</div> <hr>";
+       var roomNameThingys = "<div class = 'roomName' id = " + roomNames + " onclick = 'enterRoom(this.id)'>" + roomNames + "</div> <hr>";
        document.getElementById("output").innerHTML += roomNameThingys;
 //Fim do código
 });});}
 getData();
-
-function mewhentheuhh(name){
-  console.log(name);
-  localStorage.setItem("roomName", name);
+//har har har har har har hahar hahar
+function enterRoom(roomname){    
+  console.log(roomname);
+  localStorage.setItem("roomName", roomname);
   window.location = "page.html";
 }
